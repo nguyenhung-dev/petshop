@@ -1,0 +1,111 @@
+
+
+/* FORM */
+.login {
+    padding: 70px 0;
+}
+.login .container {
+    display: flex;
+    gap: 50px;
+}
+.login .container .img-login {
+    width: 50%;
+}
+.login .container .img-login img {
+    width: 100%;
+    height: 100%;
+    object-position: center;
+}
+.login .container form {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.login .container form h3 {
+    font-size: 30px;
+}
+.login .container form h3 p {
+    color: red;
+    font-size: 15px;
+}
+.login .container form input {
+    width: 100%;
+    padding: 15px 15px;
+    border: 1px solid rgb(192, 190, 190);
+    outline: none;
+    border-radius: 3px;
+    transition: .3s ease;
+}
+.login .container form input:focus {
+    border: 1px solid #24b6b2;
+}
+.login .container form label {
+    font-weight: 700;
+    margin-bottom: 5px;
+    margin-top: 25px;
+    display: inline-block;
+}
+.login .container form label span {
+    color: red;
+}
+.login .container form .input {
+    flex: 1;
+}
+.login .container form .error {
+    color: red;
+    font-size: 15px;
+    margin-top: 5px;
+}
+.login .container form button {
+    width: 100%;
+    padding: 17px 0;
+    cursor: pointer;
+    border: none;
+    background-color: #24b6b2;
+    color: #fff;
+    font-weight: 700;
+    font-size: 17px;
+    transition: .3s ease;
+}
+.login .container form button:hover {
+    background-color: #019c97;
+}
+.login .container form  a {
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+}
+
+
+/* Responsive Styles */
+@media (max-width: 1280px) {
+    .login .actions {
+        margin-top: 30px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .login .container {
+        flex-direction: column;
+    }
+    .login .container .img-login {
+        display: none;
+    }
+    .login .actions {
+        margin-top: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .login {
+        padding: 40px 0;
+    }
+}
+
+@media (max-width: 576px) {
+
+}
+@media (max-width: 360px) {
+
+}

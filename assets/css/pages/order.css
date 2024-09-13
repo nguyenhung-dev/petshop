@@ -1,0 +1,214 @@
+.order {
+    padding: 80px 0;
+}
+.order .container {
+    display: flex;
+}
+.order .left {
+    width: 50%;
+    padding-right: 40px;
+    border-right: 1px solid rgb(148, 148, 148);
+}
+.order .right {
+    width: 50%;
+    padding-left: 40px;
+}
+.order h3 {
+    font-weight: 800;
+    font-size: 30px;
+    color: #393d72;
+    margin-bottom: 50px;
+    position: relative;
+    display: inline-block;
+}
+.order h3::before {
+    content: "";
+    position: absolute;
+    bottom: -7px;
+    left: 0;
+    width: 70%;
+    height: 4px;
+    background-color: #ff4880;
+}
+.list-product .item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid rgb(220, 220, 220);
+}
+.list-product .item .name {
+    flex: 1;
+    margin-left: 30px;
+}
+.list-product .item .name p:first-child {
+    font-size: 19px;
+    font-weight: 700;
+}
+.list-product .item img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    object-position: center;
+}
+.list-product .item .price p{
+    color: #ff4880;
+    font-weight: 700;
+    font-size: 19px;
+}
+.total-money {
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 270px;
+    margin-left: auto;
+}
+.total-money p:first-child {
+    font-size: 24px;
+    font-weight: 700;
+}
+.total-money p:last-child {
+    font-size: 25px;
+    font-weight: 800;
+    color: red;
+}
+form {
+    width: 100%;
+}
+input:not([type='radio']) {
+    width: 100%;
+    padding: 10px 15px;
+    outline: none;
+    border: 1px solid rgb(215, 215, 215);
+}
+input:focus {
+    outline: 1px solid #13cccc;
+}
+form label {
+    font-weight: 700;
+    margin-bottom: 5px;
+    display: block;
+    margin-top: 30px;
+}
+form button {
+    width: 100%;
+    height: 50px;
+    border: 2px solid #13cccc;
+    border-radius: 5px;
+    margin-top: 10px;
+    font-weight: 600;
+    background-color: #13cccc;
+    color: #fff;
+    font-size: 18px;
+    position: relative;
+    transition: all .3s ease-in-out;
+    overflow: hidden;
+    cursor: pointer;
+}
+form button span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all .3s ease-in-out;
+    z-index: 2;
+}
+form button::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    right:0;
+    transform: translateY(-100%);
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    transition: all .3s ease-in-out;
+    z-index: 1;
+}
+form button:hover::before {
+    transform: translateY(0);
+}
+form button:hover span {
+    color: #393d72;
+}
+.messageSuccess {   
+    margin-top: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(65, 208, 65);
+    font-weight: 800;
+    font-size: 20px;
+    gap: 10px;
+    font-size: 25px;
+}
+.messageSuccess i {
+    height: 25px;
+    width: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(65, 208, 65);
+    color: #fff;
+    font-size: 14px;
+    border-radius: 50%;
+}
+
+
+/* Responsive Styles */
+@media (max-width: 1280px) {
+
+}
+
+@media (max-width: 1024px) {
+
+}
+
+@media (max-width: 768px) {
+    .order .container {
+        flex-direction: column;
+    }
+    .order .left {
+        order: 2;
+        margin-top: 35px;
+        width: 100%;
+        padding-right: 0;
+        border-right: none;
+    }
+    .order .right {
+        width: 100%;
+        padding-left: 0;
+    }
+    .order h3 {
+        margin-bottom: 25px;
+    }
+    .messageSuccess {
+
+        margin-top: 30px;
+    }
+}
+
+@media (max-width: 576px) {
+    .order h3 {
+        font-size: 25px;
+    }
+    .list-product .item .name  {
+        margin-left: 10px;
+        font-size: 15px;
+    }
+    .list-product .item .name p:first-child {
+        font-size: 15px;
+    }
+    .list-product .item img {
+        width: 50px;
+        height: 50px;
+    }
+    .list-product .item .price p {
+        font-size: 16px;
+    }
+}
+@media (max-width: 360px) {
+
+}

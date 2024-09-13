@@ -1,0 +1,203 @@
+.main-news .container{
+    display: flex;
+    gap : 80px;
+    padding: 0 0 100px 0;
+}
+.main-news .news-menu {
+    width: 30%;
+    padding-top: 70px;
+}
+.main-news .news-menu .menu-item {
+    margin-bottom: 70px;
+}
+.main-news .news-content {
+    flex: 1;
+} 
+.news-item {
+    display: flex;
+    gap: 35px;
+    margin: 70px 0;
+}
+.news-item .img {
+    width: 50%;
+}
+.news-item .content {
+    width: 50%;
+}
+.news-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 10px;
+}
+.news-item .content .title {
+    color: #393d72;
+    font-weight: 900;
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+.news-item .content p {
+    color: rgb(96, 96, 96);
+    font-weight: 600;
+    margin-bottom: 25px;
+    opacity: 0.7;
+}
+.news-item .content .date {
+    display: flex;
+    align-items: center;
+    gap: 20px   ;
+    margin-bottom: 15px;
+}
+.news-item .content .date i {
+    color: #ff4880;
+    font-size: 15px;
+    margin-right: 2px;
+}
+.news-item .content .date span {
+    color: #393d72;
+    font-size: 15px;
+    font-weight: 700;
+    display: inline-block;
+}
+.news-menu .menu-item .title {
+    color: #393d72;
+    font-size: 26px;
+    font-weight: 800;
+    margin-bottom: 40px;
+}
+.news-menu .menu-item li {
+    margin: 12px 0;
+}
+.news-menu .menu-item li i{
+    color: #ff4880;
+    font-size: 16px;
+}
+.news-menu .menu-item li span{
+    color: rgb(121, 121, 121);
+    opacity: 0.8;
+    font-size: 18px;
+    font-weight: 600;
+    margin-left: 7px;
+}
+.news-menu .menu-item li img {
+    width: 80px;
+    height: 80px;
+    border-radius: 10px;    
+    object-fit: cover;
+}
+.news-menu .menu-item .list-news li {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    border-bottom:1px solid rgb(223 223 223);
+    padding-bottom: 15px;
+}
+.news-menu .menu-item .list-news li h6 {
+    color: #393d72;
+    font-weight: 900;
+    font-size: 17px;
+}
+.news-menu .menu-item .list-news li p {
+    opacity: 0.7;
+    font-size: 14px;
+    font-weight: 500;
+    margin-top: 10px;
+}
+
+
+
+/* Responsive Styles */
+@media (max-width: 1280px) {
+    .news-item .content .date {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+    .news-item .content .date > div {
+        display: flex;
+        align-items: center;
+    }
+    .news-item .content .title {
+        font-size: 22px;
+        margin-bottom: 5px;
+    }
+    .news-item .content p  {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .news-item .img {
+        order: 1 !important;
+        width: 100%;
+    }
+    .news-item .content {
+        order: 2;
+        width: 100%;
+    }
+    .news-item {
+        flex-direction: column;
+        gap: 5px;
+        border-bottom: 1px solid rgba(180, 180, 180, 0.44);
+        padding-bottom: 30px;
+        margin: 30px 0;
+    }
+    .news-item .content .date {
+        flex-direction: row;
+        gap: 30px;
+    }
+    .btn {
+        width: 170px;
+        height: 48px;
+    }
+    .news-menu .menu-item li {
+        margin: 10px 0;
+    }
+    .news-menu .menu-item .title {
+        font-size: 23px;
+        margin-bottom: 20px;
+    }
+    .news-menu .menu-item .list-news li {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+}
+
+@media (max-width: 768px) {
+    .news-menu .menu-item li span {
+        font-size: 16px;
+    }
+    .main-news .container {
+        gap: 30px;
+    }
+    .main-news .news-menu {
+        width: 36%;
+    }
+    .news-item .content .date span {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 576px) {
+    .main-news .container {
+        flex-direction: column;
+    }
+    .main-news .news-menu {
+        width: 100%;
+    }
+    .news-item .content .date span {
+        font-size: 16px;
+    }
+    .news-menu .menu-item li span {
+        font-size: 18px;
+    }
+    .news-menu .menu-item .list-news li {
+        flex-direction: row;
+        gap: 15px;
+    }
+}
+@media (max-width: 360px) {
+
+}

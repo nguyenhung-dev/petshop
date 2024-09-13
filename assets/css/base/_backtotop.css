@@ -1,0 +1,27 @@
+.backtotop {
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+    background-color: #ff4880;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    transition: opacity 1.5s ease-in-out;
+    border: 3px solid #ff4880;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 15px;
+    opacity: 0;
+}
+.backtotop i {
+    color: #fff;
+    transition: .3s ease-in-out;
+}
+.backtotop:hover {
+    background-color: #fff;
+}
+.backtotop:hover i {
+    color: #ff4880;
+}

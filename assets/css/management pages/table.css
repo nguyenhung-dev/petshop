@@ -1,0 +1,443 @@
+
+table {
+    width: 100%;
+    text-align: left;
+    border-collapse: collapse;
+    box-shadow: 0 .125rem .25rem rgba(0, 0, 0, .075)!important;
+}
+form {
+    box-shadow: 0 .125rem .25rem rgba(0, 0, 0, .075)!important;
+    padding: 50px;
+    padding-top: 0;
+    width: 100%;
+}
+form input,
+form textarea  {
+    width: 100%;
+    padding: 12px 25px;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid #e5e5e5;
+    transition: .3s ease-in-out;
+}
+form label {
+    font-size: 17px;
+    display: inline-block;
+    font-weight: 600;
+    margin-bottom: 7px;
+}
+form input:focus,
+form textarea:focus {
+    border: 1px solid #24b6b2;
+}
+form .button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+form button {
+    padding: 15px 35px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    background-color: #ff4880;
+    color: #fff;    
+    border-radius: 10px;
+    transition: .3s ease-in-out;
+    margin-top: 50px;
+}
+form button:hover {
+    background-color: #24b6b2;
+    color: rgb(44, 44, 44);
+}
+th {
+    background-color: rgb(158, 216, 255);
+}
+th, td {
+    padding: 20px 12px;
+}
+th:first-child {
+    width: 10%;
+}
+th, td {
+    border: 1px solid rgb(226, 226, 226);
+}
+td {
+    font-size: 17px !important;
+}
+.actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+.btn {
+    padding: 9px 20px;
+    border-radius:10px;
+    cursor: pointer;
+    transition: .3s ease;
+}
+.btn:hover {
+    opacity: 0.8;
+}
+.btn a {
+    display: inline-block;
+    font-weight: 600;
+    font-size: 14px;
+    color: #fff;
+}
+.btn:first-child {
+    background-color: rgb(74, 107, 206);
+}
+.btn:last-child {
+    background-color: rgb(255, 105, 105);
+}
+.btn:nth-child(2) {
+    background-color: rgb(15, 192, 15);
+}
+.error {
+    color: red;
+    margin-top: 6px;
+    margin-bottom: 25px;
+    font-size: 15px;
+}
+select {
+    border: 1px solid rgb(216, 216, 216);
+    padding: 15px 20px;
+    font-size: 17px;
+    outline: none;
+    width: 100%;
+}
+
+.no-scroll {
+    overflow: hidden;
+}
+
+#info-invoice {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 1111;
+}
+
+#info-invoice.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.box-modal {
+    background: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    width: 55%;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+    height: 75%;
+}
+
+.box-modal h3 {
+    font-size: 26px;
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center;
+}
+.box-modal .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 20px;
+    color: #666;
+    z-index: 11111111;
+}
+
+.box-modal .close:hover {
+    color: #000;
+}
+
+.box-modal .show-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;  
+    height: 90%;
+}
+.box-modal .show-info h4 {
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+.box-modal .show-info .left,
+.box-modal .show-info .right {
+    flex: 1 1 45%;
+    overflow: hidden;
+    height: 90%;
+}
+.box-modal .info-receive li {
+    margin-bottom: 10px;
+    color: #555;
+}
+
+.box-modal .info-receive li span:first-child {
+    font-weight: bold;
+    color: #333;
+}
+
+.box-modal .products {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    overflow-y: scroll;
+    height: 90%;
+    margin-top: 30px;
+}
+
+.box-modal .products li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+.box-modal .products li div:last-child {
+    flex:1;
+}
+.box-modal .products .img {
+    width: 55px;
+    height: 55px;
+    margin-right: 15px;
+    overflow: hidden;
+    border-radius: 5px;
+}
+
+.box-modal .products .img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.box-modal .products .name {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.box-modal .products .price {
+    font-size: 14px;
+    color: #777;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.box-modal .products .price span {
+    font-weight: bold;
+    color: #333;
+}
+.info-receive {
+    margin-top: 30px;
+}
+.info-receive li:last-child span:last-child {
+    color: red;
+    font-weight: 700;
+}
+.list-invoice-cancel {
+    margin-top: 50px;
+}
+.list-invoice-cancel > p {
+    color: blue;
+    cursor: pointer;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+    align-items: center;
+}
+.list-invoice-cancel.show ul{
+    display: block;
+}
+.list-invoice-cancel ul {
+    padding: 15px 10px;
+    display: none;
+}
+.list-invoice-cancel ul .item {
+    border-bottom: 1px solid rgb(208, 208, 208);
+    padding: 10px 0;
+    margin: 10px 0;
+}
+.list-invoice-cancel ul .item .actions {
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px;
+}
+.list-invoice-cancel ul li {
+    font-size: 16px;
+}
+.list-invoice-cancel ul li:last-child {
+    margin-top: 10px;
+}
+.list-invoice-cancel > p i {
+    color: #fff;
+    font-size: 14px;
+    width: 22px;
+    height: 22px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: #2e3333;
+}
+
+.mess-success {
+    color: #24b6b2;
+    display: flex;
+    gap: 8px;
+    font-weight: 700;
+    font-size: 20px;
+    align-items: center;
+    margin: 30px 0 20px 40px;
+}
+.mess-success i {
+    width: 23px;
+    height: 23px;
+    background-color: #24b6b2;
+    border-radius: 50%;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+}
+.button a {
+    display: inline-block;
+    padding: 15px 35px;
+    border-radius: 10px;
+    background-color: #24b6b2;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 700;
+    margin-top: 20px;
+    transition: .3s ease;
+}
+.button a:hover {
+    opacity: 0.7;
+}
+
+.comment .info-product {
+    padding: 0 30px;
+}
+.comment .info-product .top {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 20px;
+}
+.comment .info-product .top .name {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+.comment .info-product .top .name h6{
+    font-size: 30px;
+    color: #24b6b2;
+    font-weight: 700;
+    width: 70%;
+    margin-bottom: 20px;
+}
+.comment .info-product .top .name .price {
+    color: red;
+    font-size: 40px;
+    flex: 1;
+}
+.comment .info-product .top .name .des {
+    color: black;
+    font-size: 18px;
+    opacity: 0.8;
+}
+.comment .info-product .top .name .des span {
+    opacity: 1;
+    font-weight: 600;
+}
+.comment .info-product .img {
+    width: 200px;
+    height: 200px;
+    border: 1px solid black;
+}
+.comment .info-product .img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+.cmt-product {
+    padding: 50px;
+}
+.cmt-product img {
+    width: 55px;
+    height: 55px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+}
+.cmt-product .info {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.cmt-product .info  .name p:first-child {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 7px;
+}
+.cmt-product .info  .name p:last-child {
+    font-size: 16px;
+    color: #929292;
+    font-weight: 500;
+}
+.cmt-product .item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0;
+    padding: 10px 0;
+    border-bottom: 1px solid rgb(222, 222, 222);
+}
+.cmt-product .item .content {
+    font-size: 17px;
+    color: #555;
+    margin-top: 10px;
+}
+.cmt-product .item .right a{
+    display: inline-block;
+    margin-right: 100px;
+}
+
+.register .input {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 33px 70px;
+}
+.register .input label {
+    display: block;
+}
+.register .input input[type="radio"]{
+    width: auto;
+    margin-right: 7px;
+    cursor: pointer;
+
+}
+.register .input .role span:first-child ,
+.register .input .gender span:first-child  {
+    margin-bottom: 8px;
+}
+

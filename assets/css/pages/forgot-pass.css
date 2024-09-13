@@ -1,0 +1,138 @@
+
+/* FORM */
+.forgot-pass {
+    padding: 45px 0;
+}
+.forgot-pass .container {
+    display: flex;
+    gap: 30px;
+}
+.forgot-pass .container .img-forgot-pass {
+    width: 50%;
+}
+.forgot-pass .container .img-forgot-pass img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+.forgot-pass .container form {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.forgot-pass .container form h3 {
+    font-size: 30px;
+}
+.forgot-pass .container form h3 p {
+    color: red;
+    font-size: 15px;
+}
+.forgot-pass .container form input {
+    width: 100%;
+    padding: 15px 15px;
+    border: 1px solid rgb(192, 190, 190);
+    outline: none;
+    border-radius: 3px;
+    transition: .3s ease;
+}
+.forgot-pass .container form input:focus {
+    border: 1px solid #24b6b2;
+}
+.forgot-pass .container form label {
+    font-weight: 700;
+    margin-bottom: 5px;
+    margin-top: 30px;
+    display: inline-block;
+}
+.forgot-pass .container form label span {
+    color: red;
+}
+.forgot-pass .container form .input {
+    flex: 1;
+}
+.forgot-pass .container form .error {
+    color: red;
+    font-size: 15px;
+    margin-top: 5px;
+}
+.forgot-pass .container form button {
+    width: 100%;
+    padding: 17px 0;
+    cursor: pointer;
+    border: none;
+    background-color: #24b6b2;
+    color: #fff;
+    font-weight: 700;
+    font-size: 17px;
+    transition: .3s ease;
+    margin-top: 40px;
+}
+.forgot-pass .container form button:hover {
+    background-color: #019c97;
+}
+.forgot-pass .container form  a {
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+}
+.success {   
+    margin-top: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(65, 208, 65);
+    font-weight: 800;
+    font-size: 20px;
+    gap: 10px;
+    font-size: 25px;
+}
+.messageSuccess i {
+    height: 25px;
+    width: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(65, 208, 65);
+    color: #fff;
+    font-size: 14px;
+    border-radius: 50%;
+}
+
+
+/* Responsive Styles */
+@media (max-width: 1280px) {
+
+}
+
+@media (max-width: 1024px) {
+    .forgot-pass .container .img-forgot-pass {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .forgot-pass {
+        padding: 30px 0;
+    }
+}
+
+@media (max-width: 576px) {
+    .forgot-pass .container form button {
+        margin-top: 20px !important;
+    }
+    .success {
+        margin-top: 25px;
+    }
+    .forgot-pass .container form input {
+        padding: 12px 15px;
+    }
+    .forgot-pass .container form label {
+        font-size: 16px;
+        margin-top: 25px;
+    }
+}
+@media (max-width: 360px) {
+
+}
