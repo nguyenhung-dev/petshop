@@ -1,5 +1,5 @@
 <?php
-session_start(); 
+session_start();
 require_once __DIR__ . '/../../config/connectDB.php';
 require_once __DIR__ . '/../../models/Product.php';
 require_once __DIR__ . '/../../models/Comment.php';
@@ -24,7 +24,7 @@ foreach ($comments as $comment) {
     $info = $user->getUser('user_id', $comment['user_id']);
     $commentData['fullname'] = $info['fullname'];
     $commentData['avatar'] = $info['avatar'];
-    
+
     $listCmts[] = $commentData;
 }
 ?>
@@ -65,42 +65,50 @@ foreach ($comments as $comment) {
                 <div class="info-product">
                     <div class="name"><?php echo $productValue[0]['name']; ?></div>
                     <div class="price"><?php echo $productValue[0]['price'] . 'đ'; ?></div>
-                    <div class="status">Trạng thái: <?php echo ($productValue[0]['quantity'] > 0) ? 'Còn hàng' : 'Hết hàng'; ?></div>
-                    <div class="description"><p><?php echo $productValue[0]['description']; ?></p></div>
+                    <div class="status">Trạng thái:
+                        <?php echo ($productValue[0]['quantity'] > 0) ? 'Còn hàng' : 'Hết hàng'; ?>
+                    </div>
+                    <div class="description">
+                        <p><?php echo $productValue[0]['description']; ?></p>
+                    </div>
                     <div class="add-cart">
-                        <?php if(isset($_SESSION['role']) && $_SESSION['role'] == 'user') { ?>
-                            <a href="../../controllers/CartControllers.php?product_id=<?php echo $productValue[0]['product_id']; ?>"><span>Thêm vào giỏ hàng</span></a>
-                        <?php } else if(isset($_SESSION['role']) && $_SESSION['role'] == 'admin') { ?>
-                            <a href="#" onclick="cannotAdd(event);"><span>Thêm vào giỏ hàng</span></a>
+                        <?php if (isset($_SESSION['role']) && $_SESSION['role'] == 'user') { ?>
+                            <a
+                                href="../../controllers/CartControllers.php?product_id=<?php echo $productValue[0]['product_id']; ?>"><span>Thêm
+                                    vào giỏ hàng</span></a>
+                        <?php } else if (isset($_SESSION['role']) && $_SESSION['role'] == 'admin') { ?>
+                                <a href="#" onclick="cannotAdd(event);"><span>Thêm vào giỏ hàng</span></a>
                         <?php } else { ?>
-                            <a href="#" onclick="loginRequired(event);"><span>Thêm vào giỏ hàng</span></a>
+                                <a href="#" onclick="loginRequired(event);"><span>Thêm vào giỏ hàng</span></a>
                         <?php } ?>
                     </div>
                 </div>
                 <div class="comment">
                     <h3>Bình luận</h3>
                     <form action="../../controllers/CommentControllers.php" method="post">
-                       <textarea name="comment" cols="30" rows="2" placeholder="Bạn nghĩ gì về sản phẩm này ?"></textarea>
-                       <button type="submit" name="get_comment" value="<?php echo $productValue[0]['product_id']; ?>">&#10148;</button>
+                        <textarea name="comment" cols="30" rows="2"
+                            placeholder="Bạn nghĩ gì về sản phẩm này ?"></textarea>
+                        <button type="submit" name="get_comment"
+                            value="<?php echo $productValue[0]['product_id']; ?>">&#10148;</button>
                     </form>
                     <div class="list-cmt">
-                        <?php if(count($listCmts) == 0) { ?>
+                        <?php if (count($listCmts) == 0) { ?>
                             <p>Chưa có bình luận nào.</p>
                         <?php } else { ?>
-                        <?php foreach($listCmts as $listCmt) { ?>
-                            <div class="item">
-                                <div class="info">
-                                   <div class="user">
-                                   <img src="../../assets/images/<?php echo $listCmt['avatar']; ?>" alt="">
-                                    <p><?php echo $listCmt['fullname']; ?></p>
-                                   </div>
-                                   <p><?php echo $listCmt['create_day']; ?></p>
+                            <?php foreach ($listCmts as $listCmt) { ?>
+                                <div class="item">
+                                    <div class="info">
+                                        <div class="user">
+                                            <img src="../../assets/images/<?php echo $listCmt['avatar']; ?>" alt="">
+                                            <p><?php echo $listCmt['fullname']; ?></p>
+                                        </div>
+                                        <p><?php echo $listCmt['create_day']; ?></p>
+                                    </div>
+                                    <div class="content">
+                                        <?php echo $listCmt['content']; ?>
+                                    </div>
                                 </div>
-                                <div class="content">
-                                <?php echo $listCmt['content']; ?>
-                                </div>
-                            </div>
-                        <?php } ?>
+                            <?php } ?>
                         <?php } ?>
                     </div>
                 </div>
@@ -108,18 +116,18 @@ foreach ($comments as $comment) {
             <div class="right">
                 <h3>Sản phẩm liên quan</h3>
                 <div class="list-product">
-                    <?php foreach($productSimilars as $product) { ?>
-                    <div class="item">
-                        <div class="img">
-                            <img src="../../assets/images/<?php echo $product['image'];?>" alt="">
+                    <?php foreach ($productSimilars as $product) { ?>
+                        <div class="item">
+                            <div class="img">
+                                <img src="../../assets/images/<?php echo $product['image']; ?>" alt="">
+                            </div>
+                            <div class="info-product">
+                                <div class="name"><a href="detail.php?product_id=<?php echo $product['product_id']; ?>">
+                                        <?php echo $product['name']; ?>
+                                    </a></div>
+                                <div class="price"><?php echo $product['price'] . 'đ'; ?></div>
+                            </div>
                         </div>
-                        <div class="info-product">
-                            <div class="name"><a href="detail.php?product_id=<?php echo $product['product_id'];?>">
-                            <?php echo $product['name'];?>
-                            </a></div>
-                            <div class="price"><?php echo $product['price'].'đ';?></div>
-                        </div>
-                    </div>
                     <?php } ?>
                 </div>
             </div>
@@ -137,6 +145,7 @@ foreach ($comments as $comment) {
             alert('Bạn chưa đăng nhập');
             window.location.href = baseUrl + 'login.php';
         }
+
         function cannotAdd(event) {
             event.preventDefault();
             alert('Không thể thêm với quyền QUẢN TRỊ VIÊN');

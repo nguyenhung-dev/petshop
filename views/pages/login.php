@@ -1,13 +1,13 @@
 <?php
-session_start(); 
-if(isset($_SESSION['login_error']) && isset($_SESSION['login_info'])) {
+session_start();
+if (isset($_SESSION['login_error']) && isset($_SESSION['login_info'])) {
     $errorMessage = $_SESSION['login_error'];
     $info = $_SESSION['login_info'];
     unset($_SESSION['login_info']);
     unset($_SESSION['login_error']);
 }
 
-if(isset($_SESSION['register_success'])) {
+if (isset($_SESSION['register_success'])) {
     echo "<script>
         alert('Đăng ký tài khoản thành công.');
     </script>";
@@ -53,15 +53,16 @@ if(isset($_SESSION['register_success'])) {
                 </h3>
                 <div class="input">
                     <label>Tên đăng nhập <span>*</span></label>
-                    <input type="text" name="username" value="<?php echo (isset($info['username'])) ? $info['username'] : ""; ?>">
-                    <p class="messageError"><?php 
-                echo (isset($errorMessage['username'])) ? $errorMessage['username'] : "";
-                ?></p>
+                    <input type="text" name="username"
+                        value="<?php echo (isset($info['username'])) ? $info['username'] : ""; ?>">
+                    <p class="messageError"><?php
+                    echo (isset($errorMessage['username'])) ? $errorMessage['username'] : "";
+                    ?></p>
                     <label>Mật khẩu <span>*</span></label>
-                    <input type="password" name="password" >
-                    <p class="messageError"><?php 
-                echo (isset($errorMessage['password'])) ? $errorMessage['password'] : "";
-                ?></p>
+                    <input type="password" name="password">
+                    <p class="messageError"><?php
+                    echo (isset($errorMessage['password'])) ? $errorMessage['password'] : "";
+                    ?></p>
                 </div>
                 <div class="actions">
                     <button type="submit" name="submit" value="login">Đăng nhập</button>
@@ -77,7 +78,7 @@ if(isset($_SESSION['register_success'])) {
     <!-- FOOTER -->
     <?php require_once __DIR__ . '/../components/footer.php'; ?>
 
-   <!-- JS LINK -->
+    <!-- JS LINK -->
     <?php require_once __DIR__ . '/../components/link-js.php'; ?>
 </body>
 

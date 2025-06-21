@@ -7,7 +7,7 @@ require_once __DIR__ . '/../../models/Catogery.php';
 require_once __DIR__ . '/../../models/Product.php';
 
 $category = new Category();
-$categories = $category->getAllCatogery();
+$categories = $category->getAllCategories();
 
 if (isset($_SESSION['category_error']) && isset($_SESSION['category_value'])) {
     $errors = $_SESSION['category_error'];
@@ -29,6 +29,7 @@ if (isset($_SESSION['value_category_edit'])) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -45,19 +46,18 @@ if (isset($_SESSION['value_category_edit'])) {
     <link rel="stylesheet" href="../../assets/css/management pages/navbar.css?v=<?php echo time(); ?>">
     <link rel="stylesheet" href="../../assets/css/management pages/table.css?v=<?php echo time(); ?>">
 </head>
+
 <body>
     <div class="wrapper">
-        <?php require_once __DIR__ . '/navbar.php';  ?>
+        <?php require_once __DIR__ . '/navbar.php'; ?>
         <div class="main">
             <h3>Thêm mới danh mục</h3>
-            <p class="mess-success"> <?php echo (isset( $messageSuccess)) ?  $messageSuccess : '' ;?></p>
+            <p class="mess-success"> <?php echo (isset($messageSuccess)) ? $messageSuccess : ''; ?></p>
             <div class="add-category">
                 <form action="../../controllers/CategoryControllers.php" method="post" enctype="multipart/form-data">
                     <label>Mã danh mục (tự động)</label>
-                    <input type="text" name="category_id"
-                        value="<?php echo (isset($value['category_id'])) ? $value['category_id'] : "";
-                        echo (isset($category_value['category_id'])) ? $category_value['category_id'] : ""; ?>"
-                        readonly>
+                    <input type="text" name="category_id" value="<?php echo (isset($value['category_id'])) ? $value['category_id'] : "";
+                    echo (isset($category_value['category_id'])) ? $category_value['category_id'] : ""; ?>" readonly>
                     <div class="error"></div>
                     <label>Tên danh mục</label>
                     <input type="text" name="name" value="<?php echo (isset($value['name'])) ? $value['name'] : "";
@@ -79,4 +79,5 @@ if (isset($_SESSION['value_category_edit'])) {
     </div>
 
 </body>
+
 </html>

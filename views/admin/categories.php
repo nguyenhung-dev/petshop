@@ -7,8 +7,8 @@ require_once __DIR__ . '/../../models/Catogery.php';
 require_once __DIR__ . '/../../models/Product.php';
 
 $category = new Category();
-$categories = $category->getAllCatogery();
-
+$categories = $category->getAllCategories();
+$product = new Product();
 
 ?>
 <!DOCTYPE html>
@@ -27,8 +27,8 @@ $categories = $category->getAllCatogery();
         integrity="sha512-6lLUdeQ5uheMFbWm3CP271l14RsX1xtx+J5x2yeIDkkiBpeVTNhTqijME7GgRKKi6hCqovwCoBTlRBEC20M8Mg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="../../assets/css/base/reset.css?v=<?php echo time(); ?>">
-    <link rel="stylesheet" href="../../assets/css/management pages/navbar.css?v=<?php echo time(); ?>">
-    <link rel="stylesheet" href="../../assets/css/management pages/table.css?v=<?php echo time(); ?>">
+    <link rel=" stylesheet" href="../../assets/css/management pages/navbar.css?v=<?php echo time(); ?>">
+    <link rel=" stylesheet" href="../../assets/css/management pages/table.css?v=<?php echo time(); ?>">
 
     <style>
         .add-category h3 {
@@ -38,14 +38,14 @@ $categories = $category->getAllCatogery();
 </head>
 
 <body>
-    <div class="wrapper">
+    <div class=" wrapper">
         <?php require_once __DIR__ . '/navbar.php'; ?>
         <div class="main">
             <h3>Danh sách danh mục</h3>
             <div class="button">
                 <a href="add-category.php">Thêm mới</a>
             </div>
-            <div class="list-categories"  style="margin-top: 15px;">
+            <div class="list-categories" style="margin-top: 15px;">
                 <table>
                     <tr>
                         <th>Mã danh mục</th>
@@ -63,30 +63,33 @@ $categories = $category->getAllCatogery();
                             <td colspan="7" style="text-align: center;">Danh mục trống.</td>
                         </tr>
                     <?php } else { ?>
-                    <?php foreach ($categories as $category) { ?>
-                        <tr>
-                            <td style="text-align: center;"><?php echo $category['category_id']; ?></td>
-                            <td><?php echo $category['name']; ?></td>
-                            <td><?php echo $category['created_day']; ?></td>
-                            <td><?php 
+                        <?php foreach ($categories as $category) { ?>
+                            <tr>
+                                <td style="text-align: center;"><?php echo $category['category_id']; ?></td>
+                                <td><?php echo $category['name']; ?></td>
+                                <td><?php echo $category['created_day']; ?></td>
+                                <td><?php
                                 $productQuantity = $product->getValues('category_id', $category['category_id']);
                                 $count = 0;
-                                foreach($productQuantity as $quantity) {
-                                    $count += $quantity['quantity'];    
+                                foreach ($productQuantity as $quantity) {
+                                    $count += $quantity['quantity'];
                                 }
                                 echo $count;
-                            ?></td>
-                            <td class="actions">
-                                <div class="btn">
-                                    <a
-                                        href="../../controllers/CategoryControllers.php?submit=editValue&category_id=<?php echo $category['category_id']; ?>"><i class="fa-solid fa-pen-to-square"></i></a>
-                                </div>
-                                <div class="btn">
-                                    <a href="#" onclick="confirmDelete('<?php echo $category['category_id']; ?>', '<?php echo $category['name']; ?>')"><i class="fa-solid fa-trash"></i></a>
-                                </div>
-                            </td>
-                        </tr>
-                    <?php } ?>
+                                ?></td>
+                                <td class="actions">
+                                    <div class="btn">
+                                        <a
+                                            href="../../controllers/CategoryControllers.php?submit=editValue&category_id=<?php echo $category['category_id']; ?>"><i
+                                                class="fa-solid fa-pen-to-square"></i></a>
+                                    </div>
+                                    <div class="btn">
+                                        <a href="#"
+                                            onclick="confirmDelete('<?php echo $category['category_id']; ?>', '<?php echo $category['name']; ?>')"><i
+                                                class="fa-solid fa-trash"></i></a>
+                                    </div>
+                                </td>
+                            </tr>
+                        <?php } ?>
                     <?php } ?>
                 </table>
             </div>
@@ -94,11 +97,11 @@ $categories = $category->getAllCatogery();
     </div>
     <script>
         function confirmDelete(id, name) {
-        var result = confirm("Xác nhận xóa danh mục:  " + name + "\nTất cả sản phẩm trong danh mục sẽ bị xóa");
-        if (result) {
-            window.location.href = "../../controllers/CategoryControllers.php?submit=delete&category_id=" + id;
+            var result = confirm("Xác nhận xóa danh mục:  " + name + "\nTất cả sản phẩm trong danh mục sẽ bị xóa");
+            if (result) {
+                window.location.href = "../../controllers/CategoryControllers.php?submit=delete&category_id=" + id;
+            }
         }
-    }
     </script>
 </body>
 

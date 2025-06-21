@@ -79,13 +79,14 @@ if (isset($_GET['invoice_id'])) {
                     <?php foreach ($invoices as $invoice) { ?>
                         <?php if ($invoice['order_status'] == 'cancelled') { ?>
                             <div class="item">
-                            <li>Đơn hàng #<?php echo $invoice['invoice_id'] . ' - ' . $invoice['fullname'] ?></li>
-                            <li>Lý do hủy: <?php echo $invoice['cancel_reason'] ?></li>
-                            <li class="actions">
-                                <a href="?invoice_id=<?php echo $invoice['invoice_id']; ?>" class="view-detail"
-                                    data-invoice-id="<?php echo $invoice['invoice_id']; ?>">Xem chi tiết</a>
-                                <a href="../../controllers/InvoiceControllers.php?invoice_id=<?php echo $invoice['invoice_id']; ?>&submit=delete">Xóa</a>
-                            </li>
+                                <li>Đơn hàng #<?php echo $invoice['invoice_id'] . ' - ' . $invoice['fullname'] ?></li>
+                                <li>Lý do hủy: <?php echo $invoice['cancel_reason'] ?></li>
+                                <li class="actions">
+                                    <a href="?invoice_id=<?php echo $invoice['invoice_id']; ?>" class="view-detail"
+                                        data-invoice-id="<?php echo $invoice['invoice_id']; ?>">Xem chi tiết</a>
+                                    <a
+                                        href="../../controllers/InvoiceControllers.php?invoice_id=<?php echo $invoice['invoice_id']; ?>&submit=delete">Xóa</a>
+                                </li>
                             </div>
                         <?php } ?>
 

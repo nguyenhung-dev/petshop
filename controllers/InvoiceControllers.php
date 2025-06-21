@@ -91,7 +91,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['invoice_id']) && $_GET[
 
 if (isset($_GET['action'])) {
     $invoice = new Invoice();
-    
+
     if ($_GET['action'] == 'confirmOrder' && isset($_GET['invoice_id'])) {
         $invoice_id = intval($_GET['invoice_id']);
         $invoice->confirmOrder($invoice_id);

@@ -1,314 +1,310 @@
 /* WELCOME */
 .welcome {
-    padding: 80px 0;
+  padding: 80px 0;
 }
 .welcome img {
-    width: 100%;
+  width: 100%;
 }
 .title-about {
-    font-size: 40px;
-    color: #13cccc;
-    font-weight: 900;
-    margin-bottom: 40px;
+  font-size: 40px;
+  color: #13cccc;
+  font-weight: 900;
+  margin-bottom: 40px;
 }
 .welcome-box {
-    display: flex;
-    gap: 50px;
-    align-items: center;
+  display: flex;
+  gap: 50px;
+  align-items: center;
 }
 .welcome-box .right {
-    width: 50%;
-    padding-right: 50px;
+  width: 50%;
+  padding-right: 50px;
 }
 .welcome-box .right p {
-    font-size: 18px;
-    font-weight: 600;
-    opacity: 0.7;
-    margin-bottom: 50px;
+  font-size: 18px;
+  font-weight: 600;
+  opacity: 0.7;
+  margin-bottom: 50px;
 }
 .welcome-box .right li {
-    display: flex;
-    margin-bottom: 15px;
+  display: flex;
+  margin-bottom: 15px;
 }
 .welcome-box .right li span {
-    color: #393d72;
-    font-weight: 900;
+  color: #393d72;
+  font-weight: 900;
 }
 .welcome-box .right li i {
-    font-size: 14px;
-    color: #fff;
-    background-color: #13cccc;  
-    width: 22px;
-    height: 22px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-right: 15px;
+  font-size: 14px;
+  color: #fff;
+  background-color: #13cccc;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 15px;
 }
 .welcome-box .right a {
-    margin-top: 80px;
+  margin-top: 80px;
 }
 /* CHOOSE */
 .choose {
-    display: flex;
-    gap: 50px;
-    align-items: center;
+  display: flex;
+  gap: 50px;
+  align-items: center;
 }
 .choose img {
-    width: 100%;
+  width: 100%;
 }
 .choose .left {
-    width: 50%;
-    text-align: right;
-    padding-left: 50px;
+  width: 50%;
+  text-align: right;
+  padding-left: 50px;
 }
 .choose .left li i {
-    width: 85px;
-    height: 85px;
-    font-size: 35px;
-    color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
+  width: 85px;
+  height: 85px;
+  font-size: 35px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
 }
 .choose .left li {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    margin-top: 40px;
-    gap: 30px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 40px;
+  gap: 30px;
 }
 .choose .left li div p:first-child {
-    font-weight: 900;
-    font-size: 20px;
-    color: #393d72;
-    margin-bottom: 13px;
+  font-weight: 900;
+  font-size: 20px;
+  color: #393d72;
+  margin-bottom: 13px;
 }
 .choose .left li div p:last-child {
-    font-weight: 500;
-    font-size: 17px;
-    opacity: 0.6;
+  font-weight: 500;
+  font-size: 17px;
+  opacity: 0.6;
 }
 .choose .left > p {
-    font-size: 19px;
-    color: rgb(104, 104, 104);
-    margin-bottom: 70px;
+  font-size: 19px;
+  color: rgb(104, 104, 104);
+  margin-bottom: 70px;
 }
 /* POPULAR */
 .popular {
-    text-align: center;
-    padding: 100px 0;
+  text-align: center;
+  padding: 100px 0;
 }
 .popular .ab-team {
-    display: grid;
-    grid-template-columns: repeat(4,1fr);
-    gap: 70px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 70px;
 }
 .popular .info {
-    position: relative;
-    overflow: hidden;
-    width: 100%;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
 }
 .popular .info img {
-    border-radius: 50%;
-    width: 100%;
-}   
+  border-radius: 50%;
+  width: 100%;
+}
 .popular .info .icon {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: flex;
-    gap: 15px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  gap: 15px;
 }
 .popular .info .icon i {
-    width: 0;
-    height: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #ff4880;
-    color: #fff;
-    border-radius: 50%;
-    font-size: 0;
-    cursor: pointer;
-    transition:0.3s ease-in-out;
-    opacity: 0;
+  width: 0;
+  height: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ff4880;
+  color: #fff;
+  border-radius: 50%;
+  font-size: 0;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+  opacity: 0;
 }
 .popular .info .icon i:hover {
-    background-color: #c5003b;
+  background-color: #c5003b;
 }
-.popular .ab-team .item:hover .icon i{
-    opacity: 1;
-    width: 35px;
-    height: 35px;
-    font-size: 14px;
+.popular .ab-team .item:hover .icon i {
+  opacity: 1;
+  width: 35px;
+  height: 35px;
+  font-size: 14px;
 }
 .popular .ab-team .item .name {
-    color: #393d72;
-    font-size: 23px;
-    font-weight: 900;
-    margin-top: 20px;
+  color: #393d72;
+  font-size: 23px;
+  font-weight: 900;
+  margin-top: 20px;
 }
 .popular .ab-team .item .job {
-    color: red;
-    font-size: 15px;
-    font-weight: 600;
-    margin-top: 10px;
+  color: red;
+  font-size: 15px;
+  font-weight: 600;
+  margin-top: 10px;
 }
-
-
 
 /* Responsive Styles */
 @media (max-width: 1280px) {
-    .welcome-box .right,
-    .welcome-box .left {
-        width: 50%;
-    }
-    .welcome-box .right {
-        padding-right: 20px;
-    }
-    .title-about {
-        font-size: 38px;
-        margin-bottom: 10px;
-    }
-    .welcome-box .right p {
-        margin-bottom: 40px;
-    }
-    .welcome-box .right a {
-        margin-top: 40px;
-    }
-    .choose .left,
-    .choose .right {
-        width: 50%;
-    }
-    .choose .left {
-        padding-left: 20px;
-    }
-    .choose .left li div p:first-child {
-        margin-bottom: 6px;
-    }
-    .choose .left > p {
-        margin-bottom: 45px;
-    }
-    .choose .left li {
-        margin-top: 25px;
-    }
-    .popular .ab-team {
-        margin-top: 40px;
-        gap: 35px;
-    }
+  .welcome-box .right,
+  .welcome-box .left {
+    width: 50%;
+  }
+  .welcome-box .right {
+    padding-right: 20px;
+  }
+  .title-about {
+    font-size: 38px;
+    margin-bottom: 10px;
+  }
+  .welcome-box .right p {
+    margin-bottom: 40px;
+  }
+  .welcome-box .right a {
+    margin-top: 40px;
+  }
+  .choose .left,
+  .choose .right {
+    width: 50%;
+  }
+  .choose .left {
+    padding-left: 20px;
+  }
+  .choose .left li div p:first-child {
+    margin-bottom: 6px;
+  }
+  .choose .left > p {
+    margin-bottom: 45px;
+  }
+  .choose .left li {
+    margin-top: 25px;
+  }
+  .popular .ab-team {
+    margin-top: 40px;
+    gap: 35px;
+  }
 }
 
 @media (max-width: 1024px) {
-    .title-about {
-        font-size: 30px;
-    }
-    .welcome-box .right p {
-        font-size: 16px;
-        margin-bottom: 25px;
-    }
-    .welcome-box .right li span {
-        font-size: 15px;
-    }
-    .welcome-box .right li {
-        margin-bottom: 10px;
-    }
-    .welcome-box .right li i {
-        width: 20px;
-        height: 20px;
-    }
-    .welcome-box .right a {
-        margin-top: 20px;
-    }
-    .choose .left > p {
-        font-size: 16px;
-        margin-bottom: 25px;
-    }
-    .choose .left li i {
-        width: 70px;
-        height: 70px;
-        font-size: 30px;
-    }
-    .choose .left li {
-        gap: 20px;
-    }
-    .choose .left li div p:last-child {
-        font-size: 15px;
-    }
-    .popular .ab-team .item .name {
-        font-size: 20px;
-        margin-top: 8px;
-    }
-    .popular .ab-team .item .job  {
-        font-size: 14px;
-    }
- 
+  .title-about {
+    font-size: 30px;
+  }
+  .welcome-box .right p {
+    font-size: 16px;
+    margin-bottom: 25px;
+  }
+  .welcome-box .right li span {
+    font-size: 15px;
+  }
+  .welcome-box .right li {
+    margin-bottom: 10px;
+  }
+  .welcome-box .right li i {
+    width: 20px;
+    height: 20px;
+  }
+  .welcome-box .right a {
+    margin-top: 20px;
+  }
+  .choose .left > p {
+    font-size: 16px;
+    margin-bottom: 25px;
+  }
+  .choose .left li i {
+    width: 70px;
+    height: 70px;
+    font-size: 30px;
+  }
+  .choose .left li {
+    gap: 20px;
+  }
+  .choose .left li div p:last-child {
+    font-size: 15px;
+  }
+  .popular .ab-team .item .name {
+    font-size: 20px;
+    margin-top: 8px;
+  }
+  .popular .ab-team .item .job {
+    font-size: 14px;
+  }
 }
 
 @media (max-width: 768px) {
-    .welcome-box,
-    .choose {
-        flex-direction: column;
-    }
-    .welcome-box .right,
-    .welcome-box .left {
-        width: 100%;
-    }
-    .welcome-box .right,
-    .choose .left  {
-        padding: 0 25px;
-    }
-    .choose .left, 
-    .choose .right {
-        width: 100%;
-    }
-    .popular .ab-team {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 50px;
-    }
+  .welcome-box,
+  .choose {
+    flex-direction: column;
+  }
+  .welcome-box .right,
+  .welcome-box .left {
+    width: 100%;
+  }
+  .welcome-box .right,
+  .choose .left {
+    padding: 0 25px;
+  }
+  .choose .left,
+  .choose .right {
+    width: 100%;
+  }
+  .popular .ab-team {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 50px;
+  }
 }
 
 @media (max-width: 576px) {
-    .welcome-box .right,
-    .choose .left  {
-        padding: 0 15px;
-    }
-    .welcome-box .right p {
-        font-size: 15px;
-    }
-    .title-about {
-        line-height: 30px;
-        font-size: 25px;
-    }
-    .welcome-box .right li span {
-        font-size: 14px;
-    }
-    .btn {
-        width: 170px;
-        height: 50px;
-    }
-    .choose .left li div p:last-child {
-        height: 40px;
-        overflow: hidden;
-    }
-    .popular .ab-team {
-        padding: 0 40px;
-        grid-template-columns: repeat(1, 1fr);
-    }
-    .title-about {
-        line-height: 30px;
-        font-size: 20px;
-    }
-    .popular .info img {
-        width: 65%;
-    }
-    .popular .ab-team .item .name {
-        margin-top: 0;
-    }
+  .welcome-box .right,
+  .choose .left {
+    padding: 0 15px;
+  }
+  .welcome-box .right p {
+    font-size: 15px;
+  }
+  .title-about {
+    line-height: 30px;
+    font-size: 25px;
+  }
+  .welcome-box .right li span {
+    font-size: 14px;
+  }
+  .btn {
+    width: 170px;
+    height: 50px;
+  }
+  .choose .left li div p:last-child {
+    height: 40px;
+    overflow: hidden;
+  }
+  .popular .ab-team {
+    padding: 0 40px;
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .title-about {
+    line-height: 30px;
+    font-size: 20px;
+  }
+  .popular .info img {
+    width: 65%;
+  }
+  .popular .ab-team .item .name {
+    margin-top: 0;
+  }
 }
 @media (max-width: 360px) {
-
 }

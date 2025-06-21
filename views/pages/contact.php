@@ -32,24 +32,34 @@
                 <div class="ct-left">
                     <h3>Liên hệ với chúng tôi</h3>
                     <div class="ct-intro-top">
-                    Chào mừng bạn đến với cửa hàng thú cưng đáng yêu của chúng tôi! Chúng tôi rất vui khi được giúp đỡ bạn và những người bạn bốn chân của bạn. Nếu bạn có bất kỳ câu hỏi nào về sản phẩm, dịch vụ, hoặc cần tư vấn chăm sóc cho thú cưng, đừng ngần ngại liên hệ với chúng tôi. Đội ngũ nhân viên nhiệt tình và yêu động vật của chúng tôi luôn sẵn sàng hỗ trợ bạn.
+                        Chào mừng bạn đến với cửa hàng thú cưng đáng yêu của chúng tôi! Chúng tôi rất vui khi được giúp
+                        đỡ bạn và
+                        những người bạn bốn chân của bạn. Nếu bạn có bất kỳ câu hỏi nào về sản phẩm, dịch vụ, hoặc cần
+                        tư vấn chăm
+                        sóc cho thú cưng, đừng ngần ngại liên hệ với chúng tôi. Đội ngũ nhân viên nhiệt tình và yêu động
+                        vật của
+                        chúng tôi luôn sẵn sàng hỗ trợ bạn.
                     </div>
                     <div class="info">
                         <div>
-                         <i class="fa-solid fa-phone"></i>
+                            <i class="fa-solid fa-phone"></i>
                             <span>1900 1000</span>
                         </div>
                         <div>
-                        <i class="fa-solid fa-envelope"></i>
+                            <i class="fa-solid fa-envelope"></i>
                             <span>petshop_fpt@gmail.com</span>
                         </div>
                         <div>
-                        <i class="fa-solid fa-location-dot"></i>
+                            <i class="fa-solid fa-location-dot"></i>
                             <span>137 Nguyễn Thị Thập, quận Liên Chiểu, Tp.Đà Nẵng.</span>
                         </div>
                     </div>
                     <div class="ct-intro-bottom">
-                    Chúng tôi luôn mong muốn mang đến những sản phẩm tốt nhất và dịch vụ tuyệt vời nhất cho thú cưng của bạn. Cảm ơn bạn đã tin tưởng và ủng hộ cửa hàng của chúng tôi. Chúc bạn và thú cưng có một ngày thật vui vẻ và hạnh phúc!
+                        Chúng tôi luôn mong muốn mang đến những sản phẩm tốt nhất và dịch vụ tuyệt vời nhất cho thú cưng
+                        của bạn.
+                        Cảm ơn bạn đã tin tưởng và ủng hộ cửa hàng của chúng tôi. Chúc bạn và thú cưng có một ngày thật
+                        vui vẻ và
+                        hạnh phúc!
                     </div>
                 </div>
                 <div class="ct-right">
@@ -69,7 +79,7 @@
             </div>
         </div>
     </section>
-    
+
 
     <!-- FOOTER -->
     <?php require_once __DIR__ . '/../components/footer.php'; ?>

@@ -71,7 +71,7 @@
                             việc tạo ra thức ăn cho chó mèo.</p>
                     </div>
                     <div>
-                    <i class="fa-solid fa-person-breastfeeding" style="background-color: #ffbaa0;"></i>
+                        <i class="fa-solid fa-person-breastfeeding" style="background-color: #ffbaa0;"></i>
                     </div>
                 </li>
                 <li>
@@ -81,7 +81,7 @@
                             chúng tôi được thực hiện.</p>
                     </div>
                     <div>
-                    <i class="fa-solid fa-medal" style="background-color: #e0df93;"></i>
+                        <i class="fa-solid fa-medal" style="background-color: #e0df93;"></i>
                     </div>
                 </li>
                 <li>
@@ -91,7 +91,7 @@
                             nhận được...!</p>
                     </div>
                     <div>
-                    <i class="fa-solid fa-face-smile" style="background-color: #cfecbc;"></i>
+                        <i class="fa-solid fa-face-smile" style="background-color: #cfecbc;"></i>
                     </div>
                 </li>
             </ul>
@@ -102,79 +102,79 @@
     </section>
     <!-- POPULAR -->
     <section class="popular">
-    <div class="container">
-        <div class="title-about">
-        Người trông thú cưng phổ biến
-            <br/>
-        Huấn luyện viên cho thuê
+        <div class="container">
+            <div class="title-about">
+                Người trông thú cưng phổ biến
+                <br />
+                Huấn luyện viên cho thuê
+            </div>
+            <div class="ab-team">
+                <div class="item">
+                    <div class="info">
+                        <img src="../../assets/images/ab-team1.jpg" alt="">
+                        <div class="icon">
+                            <i class="fa-brands fa-facebook-f"></i>
+                            <i class="fa-brands fa-twitter"></i>
+                            <i class="fa-brands fa-instagram"></i>
+                        </div>
+                    </div>
+                    <div class="name">
+                        Stephen King
+                    </div>
+                    <div class="job">
+                        Chăm sóc chó ban ngày | 2 năm kinh nghiệm
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="info">
+                        <img src="../../assets/images/ab-team2.jpg" alt="">
+                        <div class="icon">
+                            <i class="fa-brands fa-facebook-f"></i>
+                            <i class="fa-brands fa-twitter"></i>
+                            <i class="fa-brands fa-instagram"></i>
+                        </div>
+                    </div>
+                    <div class="name">
+                        Linda Hamilton
+                    </div>
+                    <div class="job">
+                        Chải chuốt | 2 năm kinh nghiệm
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="info">
+                        <img src="../../assets/images/ab-team3.jpg" alt="">
+                        <div class="icon">
+                            <i class="fa-brands fa-facebook-f"></i>
+                            <i class="fa-brands fa-twitter"></i>
+                            <i class="fa-brands fa-instagram"></i>
+                        </div>
+                    </div>
+                    <div class="name">
+                        Jenniffer Kathy
+                    </div>
+                    <div class="job">
+                        Nội trú | 1 năm kinh nghiệm
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="info">
+                        <img src="../../assets/images/ab-team4.jpg" alt="">
+                        <div class="icon">
+                            <i class="fa-brands fa-facebook-f"></i>
+                            <i class="fa-brands fa-twitter"></i>
+                            <i class="fa-brands fa-instagram"></i>
+                        </div>
+                    </div>
+                    <div class="name">
+                        Lisa Kudrow
+                    </div>
+                    <div class="job">
+                        Huấn luyện hành vi | 2 năm kinh nghiệm
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="ab-team">
-            <div class="item">
-                <div class="info">
-                    <img src="../../assets/images/ab-team1.jpg" alt="">
-                    <div class="icon">
-                        <i class="fa-brands fa-facebook-f"></i>
-                        <i class="fa-brands fa-twitter"></i>
-                        <i class="fa-brands fa-instagram"></i>
-                    </div>
-                </div>
-                <div class="name">
-                Stephen King
-                </div>
-                <div class="job">
-                Chăm sóc chó ban ngày | 2 năm kinh nghiệm
-                </div>
-            </div>
-            <div class="item">
-                <div class="info">
-                    <img src="../../assets/images/ab-team2.jpg" alt="">
-                    <div class="icon">
-                        <i class="fa-brands fa-facebook-f"></i>
-                        <i class="fa-brands fa-twitter"></i>
-                        <i class="fa-brands fa-instagram"></i>
-                    </div>
-                </div>
-                <div class="name">
-                Linda Hamilton
-                </div>
-                <div class="job">
-                Chải chuốt | 2 năm kinh nghiệm
-                </div>
-            </div>
-            <div class="item">
-                <div class="info">
-                    <img src="../../assets/images/ab-team3.jpg" alt="">
-                    <div class="icon">
-                        <i class="fa-brands fa-facebook-f"></i>
-                        <i class="fa-brands fa-twitter"></i>
-                        <i class="fa-brands fa-instagram"></i>
-                    </div>
-                </div>
-                <div class="name">
-                Jenniffer Kathy
-                </div>
-                <div class="job">
-                Nội trú | 1 năm kinh nghiệm
-                </div>
-            </div>
-            <div class="item">
-                <div class="info">
-                    <img src="../../assets/images/ab-team4.jpg" alt="">
-                    <div class="icon">
-                        <i class="fa-brands fa-facebook-f"></i>
-                        <i class="fa-brands fa-twitter"></i>
-                        <i class="fa-brands fa-instagram"></i>
-                    </div>
-                </div>
-                <div class="name">
-                Lisa Kudrow
-                </div>
-                <div class="job">
-                Huấn luyện hành vi | 2 năm kinh nghiệm
-                </div>
-            </div>
-        </div>
-    </div>
     </section>
 
     <!-- FOOTER -->

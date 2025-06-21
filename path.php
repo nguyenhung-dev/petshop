@@ -6,5 +6,4 @@ $base = $protocol . $_SERVER['HTTP_HOST'] . dirname($_SERVER['SCRIPT_NAME']) . '
 
 $base = rtrim($base, '/\\') . '/';
 
-// echo $base;
 ?>

@@ -7,10 +7,10 @@ require_once __DIR__ . '/../../models/Catogery.php';
 require_once __DIR__ . '/../../models/Product.php';
 
 $category = new Category();
-$categories = $category->getAllCatogery();
+$categories = $category->getAllCategories();
 
 $product = new Product();
-$products = $product->getAllProduct();
+$products = $product->getAllProducts();
 $allProducts = $products;
 // print_r($products);
 
@@ -33,6 +33,7 @@ if (isset($_SESSION['value_product_edit'])) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -46,16 +47,17 @@ if (isset($_SESSION['value_product_edit'])) {
         integrity="sha512-6lLUdeQ5uheMFbWm3CP271l14RsX1xtx+J5x2yeIDkkiBpeVTNhTqijME7GgRKKi6hCqovwCoBTlRBEC20M8Mg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="../../assets/css/base/reset.css?v=<?php echo time(); ?>">
-    <link rel="stylesheet" href="../../assets/css/management pages/navbar.css?v=<?php echo time(); ?>">
-    <link rel="stylesheet" href="../../assets/css/management pages/table.css?v=<?php echo time(); ?>">
+    <link rel=" stylesheet" href="../../assets/css/management pages/navbar.css?v=<?php echo time(); ?>">
+    <link rel=" stylesheet" href="../../assets/css/management pages/table.css?v=<?php echo time(); ?>">
 </head>
+
 <body>
-    <div class="wrapper">
-        <?php require_once __DIR__ . '/navbar.php';  ?>
+    <div class=" wrapper">
+        <?php require_once __DIR__ . '/navbar.php'; ?>
         <div class="main">
-        <div class="add-category">
+            <div class="add-category">
                 <h3>Chỉnh sửa sản phẩm</h3>
-                <p class="mess-success"> <?php echo (isset( $messageSuccess)) ?  $messageSuccess : '' ;?></p>
+                <p class="mess-success"> <?php echo (isset($messageSuccess)) ? $messageSuccess : ''; ?></p>
                 <form action="../../controllers/ProductControllers.php" method="post" enctype="multipart/form-data">
                     <label>Mã sản phẩm</label>
                     <input type="text" name="product_id" value="<?php echo (isset($value['product_id'])) ? $value['product_id'] : "";
@@ -85,7 +87,8 @@ if (isset($_SESSION['value_product_edit'])) {
                             <option value="<?php echo $category['category_id'] ?>"><?php echo $category['name'] ?></option>
                         <?php } ?>
                     </select>
-                    <div class="error"><?php echo (isset($errors['category_id'])) ? $errors['category_id'] : ""; ?>
+                    <div class="error">
+                        <?php echo (isset($errors['category_id'])) ? $errors['category_id'] : ""; ?>
                     </div>
                     <label>Hình ảnh</label>
                     <input type="file" name="image">
@@ -99,4 +102,5 @@ if (isset($_SESSION['value_product_edit'])) {
     </div>
 
 </body>
+
 </html>

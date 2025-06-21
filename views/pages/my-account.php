@@ -1,5 +1,5 @@
 <?php
-session_start(); 
+session_start();
 require_once __DIR__ . '/../../config/connectDB.php';
 require_once __DIR__ . '/../../models/User.php';
 require_once __DIR__ . '/../../models/Invoice.php';
@@ -20,7 +20,6 @@ if (isset($_GET['invoice_id'])) {
     $invoiceDetails = $invoice->getInvoiceDetails($invoice_id);
     $products = $product->getProductsByInvoiceId($invoice_id);
 }
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -89,143 +88,148 @@ if (isset($_GET['invoice_id'])) {
             </div>
         </div>
     </section>
-    
+
     <section class="my-invoice">
         <div class="container">
             <h3>Đơn hàng của bạn</h3>
-            <?php if(count($invoices) == 0) { ?>
+            <?php if (count($invoices) == 0) { ?>
                 <p style="margin-bottom: 100px;">Không có đơn hàng nào.</p>
             <?php } else { ?>
                 <table>
+                    <tr>
+                        <th>Mã đơn hàng</th>
+                        <th>Ngày tạo đơn</th>
+                        <th>Trạng thái đơn hàng</th>
+                        <th>Thành tiền</th>
+                        <th></th>
+                    </tr>
+                    <?php foreach ($invoices as $invoice) { ?>
                         <tr>
-                            <th>Mã đơn hàng</th>
-                            <th>Ngày tạo đơn</th>
-                            <th>Trạng thái đơn hàng</th>
-                            <th>Thành tiền</th>
-                            <th></th>
+                            <td><?php echo $invoice['invoice_id']; ?></td>
+                            <td><?php echo $invoice['created_day']; ?></td>
+                            <td><?php
+                            if ($invoice['order_status'] == 'pending') {
+                                echo 'Chờ xử lý';
+                            } else if ($invoice['order_status'] == 'cancelled') {
+                                echo '<p style="color: red;">Bị hủy</p>';
+                            } else {
+                                echo '<p style="color: blue;">Chờ giao hàng</p>';
+                            }
+                            ?>
+                            </td>
+                            <td><?php echo number_format($invoice['total_money'], 0, ',', '.') . ' đ'; ?></td>
+                            <td class="actions">
+                                <div class="btn">
+                                    <a href="my-account.php?invoice_id=<?php echo $invoice['invoice_id']; ?>"
+                                        class="view-detail" data-invoice-id="<?php echo $invoice['invoice_id']; ?>">Xem chi
+                                        tiết</a>
+                                </div>
+                            </td>
                         </tr>
-                        <?php foreach($invoices as $invoice) { ?>
-                            <tr>
-                                <td><?php echo $invoice['invoice_id']; ?></td>
-                                <td><?php echo $invoice['created_day']; ?></td>
-                                <td><?php 
-                                    if($invoice['order_status'] == 'pending') {
-                                        echo 'Chờ xử lý';
-                                    } else if($invoice['order_status'] == 'cancelled') {
-                                        echo '<p style="color: red;">Bị hủy</p>';
-                                    } else {
-                                        echo '<p style="color: blue;">Chờ giao hàng</p>';
-                                    }
-                                    ?>
-                                </td>
-                                <td><?php echo  number_format($invoice['total_money'], 0, ',', '.') . ' đ'; ?></td>
-                                <td class="actions">
-                                    <div class="btn">
-                                    <a href="my-account.php?invoice_id=<?php echo $invoice['invoice_id']; ?>" class="view-detail" data-invoice-id="<?php echo $invoice['invoice_id']; ?>">Xem chi tiết</a>
-                                    </div>
-                                </td>
-                            </tr>
-                        <?php } ?>
+                    <?php } ?>
                 </table>
                 <div class="my-invoice-repon">
-                <?php foreach($invoices as $invoice) { ?>
-                    <div class="item">
-                        <div>
-                         <p>Đơn hàng#<?php  echo $invoice['invoice_id'] . ' - ' . $invoice['fullname'] ?> - </p> <?php if($invoice['order_status'] == 'pending') {
+                    <?php foreach ($invoices as $invoice) { ?>
+                        <div class="item">
+                            <div>
+                                <p>Đơn hàng#<?php echo $invoice['invoice_id'] . ' - ' . $invoice['fullname'] ?> - </p> <?php if ($invoice['order_status'] == 'pending') {
                                             echo 'Chờ xử lý';
-                                        } else if($invoice['order_status'] == 'cancelled') {
+                                        } else if ($invoice['order_status'] == 'cancelled') {
                                             echo '<p style="color: red;">Bị hủy</p>';
                                         } else {
                                             echo '<p style="color: blue;">Chờ giao hàng</p>';
                                         }
                                         ?>
+                            </div>
+                            <a href="my-account.php?invoice_id=<?php echo $invoice['invoice_id']; ?>" class="view-detail"
+                                data-invoice-id="<?php echo $invoice['invoice_id']; ?>">Xem chi tiết</a>
                         </div>
-                        <a href="my-account.php?invoice_id=<?php echo $invoice['invoice_id']; ?>" class="view-detail" data-invoice-id="<?php echo $invoice['invoice_id']; ?>">Xem chi tiết</a>
-                    </div>
-                   <?php } ?>  
+                    <?php } ?>
                 </div>
             <?php } ?>
         </div>
     </section>
 
-    <?php if($invoiceDetails) { ?>
-    <section class="info-invoice active" id="info-invoice">
-        <div class="box-modal">
-            <div class="close" id="close"><i class="fa-solid fa-xmark"></i></div>
-            <h3>Chi tiết đơn hàng</h3>
-            <div class="show-info">
-              <div class="left">
-                <h4>Thông tin nhận hàng</h4>
-                <ul class="info-receive">
-                    <li>
-                        <span>Mã đơn hàng:</span>
-                        <span><?php echo $invoiceDetails['invoice_id']; ?></span>
-                    </li>
-                    <li>
-                        <span>Tên người nhận:</span>
-                        <span><?php echo $invoiceDetails['fullname']; ?></span>
-                    </li>
-                    <li>
-                        <span>Số điện thoại:</span>
-                        <span><?php echo $invoiceDetails['phonenumber']; ?></span>
-                    </li>
-                    <li>
-                        <span>Địa chỉ:</span>
-                        <span><?php echo $invoiceDetails['address']; ?></span>
-                    </li>
-                    <li>
-                        <span>Trạng thái thanh toán:</span>
-                        <span><?php echo ($invoiceDetails['payment_status'] == 'online') ? 'Đã thanh toán' : 'Chưa thanh toán'; ?></span>
-                    </li>
-                    <li>
-                        <span>Ngày tạo đơn:</span>
-                        <span><?php echo $invoiceDetails['created_day']; ?></span>
-                    </li>
-                    <li>
-                        <span>Trạng thái đơn hàng:</span>
-                        <span><?php 
-                            if($invoiceDetails['order_status'] == 'pending') {
-                                echo 'Chờ xử lý';
-                            } else if($invoiceDetails['order_status'] == 'cancelled') {
-                                echo 'Bị hủy';
-                            } else {
-                                echo 'Chờ giao hàng';
-                            }
-                        ?></span>
-                    </li>
+    <?php if ($invoiceDetails) { ?>
+        <section class="info-invoice active" id="info-invoice">
+            <div class="box-modal">
+                <div class="close" id="close"><i class="fa-solid fa-xmark"></i></div>
+                <h3>Chi tiết đơn hàng</h3>
+                <div class="show-info">
+                    <div class="left">
+                        <h4>Thông tin nhận hàng</h4>
+                        <ul class="info-receive">
+                            <li>
+                                <span>Mã đơn hàng:</span>
+                                <span><?php echo $invoiceDetails['invoice_id']; ?></span>
+                            </li>
+                            <li>
+                                <span>Tên người nhận:</span>
+                                <span><?php echo $invoiceDetails['fullname']; ?></span>
+                            </li>
+                            <li>
+                                <span>Số điện thoại:</span>
+                                <span><?php echo $invoiceDetails['phonenumber']; ?></span>
+                            </li>
+                            <li>
+                                <span>Địa chỉ:</span>
+                                <span><?php echo $invoiceDetails['address']; ?></span>
+                            </li>
+                            <li>
+                                <span>Trạng thái thanh toán:</span>
+                                <span><?php echo ($invoiceDetails['payment_status'] == 'online') ? 'Đã thanh toán' : 'Chưa thanh toán'; ?></span>
+                            </li>
+                            <li>
+                                <span>Ngày tạo đơn:</span>
+                                <span><?php echo $invoiceDetails['created_day']; ?></span>
+                            </li>
+                            <li>
+                                <span>Trạng thái đơn hàng:</span>
+                                <span><?php
+                                if ($invoiceDetails['order_status'] == 'pending') {
+                                    echo 'Chờ xử lý';
+                                } else if ($invoiceDetails['order_status'] == 'cancelled') {
+                                    echo 'Bị hủy';
+                                } else {
+                                    echo 'Chờ giao hàng';
+                                }
+                                ?></span>
+                            </li>
 
-                    <?php if($invoiceDetails['order_status'] == 'cancelled') { ?>
-                        <li>
-                            <span>Lý do hủy:</span>
-                            <span><?php echo $invoiceDetails['cancel_reason']; ?></span>
-                        </li>
-                    <?php } ?>
+                            <?php if ($invoiceDetails['order_status'] == 'cancelled') { ?>
+                                <li>
+                                    <span>Lý do hủy:</span>
+                                    <span><?php echo $invoiceDetails['cancel_reason']; ?></span>
+                                </li>
+                            <?php } ?>
 
-                    <li>
-                        <span>Tổng tiền:</span>
-                        <span><?php echo number_format($invoiceDetails['total_money'], 0, ',', '.') . ' đ'; ?></span>
-                    </li>
-                </ul>
-              </div>
-              <div class="right">
-                <h4>Sản phẩm</h4>
-                <ul class="products">
-                <?php foreach ($products as $product) { ?>
-                    <li>
-                        <div class="img">
-                            <img src="../../assets/images/<?php echo $product['image']; ?>" alt="">
-                        </div>
-                        <div>
-                            <p class="name"><?php echo $product['name']; ?></p>
-                            <p class="price"><span>Số lượng: <?php echo $product['quantity']; ?></span><span><?php echo number_format($product['price'], 0, ',', '.') . ' đ'; ?></span></p>
-                        </div>
-                    </li>
-                    <?php } ?>
-                </ul>
-              </div>
+                            <li>
+                                <span>Tổng tiền:</span>
+                                <span><?php echo number_format($invoiceDetails['total_money'], 0, ',', '.') . ' đ'; ?></span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="right">
+                        <h4>Sản phẩm</h4>
+                        <ul class="products">
+                            <?php foreach ($products as $product) { ?>
+                                <li>
+                                    <div class="img">
+                                        <img src="../../assets/images/<?php echo $product['image']; ?>" alt="">
+                                    </div>
+                                    <div>
+                                        <p class="name"><?php echo $product['name']; ?></p>
+                                        <p class="price"><span>Số lượng:
+                                                <?php echo $product['quantity']; ?></span><span><?php echo number_format($product['price'], 0, ',', '.') . ' đ'; ?></span>
+                                        </p>
+                                    </div>
+                                </li>
+                            <?php } ?>
+                        </ul>
+                    </div>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
     <?php } ?>
 
     <!-- FOOTER -->
@@ -239,14 +243,14 @@ if (isset($_GET['invoice_id'])) {
         let closeModal = document.getElementById('close');
 
         viewDetailLinks.forEach(link => {
-            link.addEventListener('click', function(e) {
+            link.addEventListener('click', function (e) {
                 e.preventDefault();
                 const invoiceId = this.getAttribute('data-invoice-id');
                 window.location.href = 'my-account.php?invoice_id=' + invoiceId;
             });
         });
 
-        closeModal.addEventListener('click', function() {
+        closeModal.addEventListener('click', function () {
             infoInvoice.classList.remove('active');
             document.body.classList.remove('no-scroll');
             window.history.pushState({}, '', window.location.pathname);
